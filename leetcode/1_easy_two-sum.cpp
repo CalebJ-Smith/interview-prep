@@ -15,3 +15,25 @@ public:
         return vector<int>();
     }
 };
+
+// This is a O(n) solution that is median speed, better than 13% memory
+
+class Solution {
+	public:
+	vector<int> twoSum(vector<int>& nums, int target) {
+		unordered_map<int, int> val2idx;
+		for(size_t i = 0; i < nums.size(); ++i){ //O(n)
+			val2idx[nums[i]] = i;
+		}
+			            
+		for(int i = 0; i < nums.size(); ++i){
+			int desired = target - nums[i];
+			auto found = val2idx.find(desired);
+			if(found != val2idx.end() && found->second != i){
+				return {i, found->second};
+			}
+		}
+		//guarenteed to never get here by problem statement
+		return {0,0};
+	}
+}
