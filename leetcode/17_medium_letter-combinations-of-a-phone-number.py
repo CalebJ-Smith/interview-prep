@@ -1,5 +1,5 @@
 # https://leetcode.com/problems/letter-combinations-of-a-phone-number
-# Correct, about 30th percentile for speed and memory :(
+# Correct, about 50th percentile speed 25th percentile memory
 from collections import deque
 from typing import List
 
